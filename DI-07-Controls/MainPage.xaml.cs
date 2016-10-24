@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,9 +23,35 @@ namespace DI_07_Controls
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        String cadena = "";
         public MainPage()
         {
             this.InitializeComponent();
         }
+        /// <summary>
+        /// Evento que controla que checkbox se ha seleccionado y muestra en pantalla
+        /// un mensaje con el checkbox que muestras en pantalla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void go_Click(object sender, RoutedEventArgs e)
+        {
+            
+            MessageDialog md = new MessageDialog("Has pulsado "+cadena);
+            await md.ShowAsync();
+        }
+
+        private void Checked(object sender, RoutedEventArgs e)
+        {
+            cadena = "";
+            RadioButton rb = sender as RadioButton;
+            cadena = rb.Name;
+
+        }
+        /* Con dos calendarios, simular uan reserva en un hotel
+         * El día inicial no puede ser anterior a hoy
+         * El día final no puede ser anterior al día siguiente al de inicio de reserva
+         */
+        
     }
 }

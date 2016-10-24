@@ -8,6 +8,51 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="2" Grid.Row="0">
+            <RadioButton Name="Yes" 
+                         GroupName="Options" 
+                         Checked="Checked">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xE10B;" FontFamily="Segoe MDL2 Assets"/>
+                    <TextBlock Foreground="Green">Yes</TextBlock>
+                </StackPanel>
+            </RadioButton>
+            <RadioButton Name="No" 
+                         GroupName="Options" 
+                         Checked="Checked">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xE10A;" FontFamily="Segoe MDL2 Assets"/>
+                    <TextBlock Foreground="Red">No</TextBlock>
+                </StackPanel>
+            </RadioButton>
+            <RadioButton Name="Maybe" 
+                         GroupName="Options" 
+                         Checked="Checked">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xEb51;" FontFamily="Segoe MDL2 Assets"/>
+                    <TextBlock Foreground="Pink">Maybe</TextBlock>
+                </StackPanel>
+            </RadioButton>
+            <Button Name="go" Click="go_Click" Content="Go"/>
+        </StackPanel>
+        <TextBox ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 Grid.Row="1" 
+                 Grid.Column="2" 
+                 MaxHeight="50" 
+                 Language="es-Es" 
+                 TextWrapping="Wrap" 
+                 AcceptsReturn="True"/>
     </Grid>
 </Page>
