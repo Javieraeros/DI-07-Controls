@@ -27,6 +27,7 @@ namespace DI_07_Controls
         public MainPage()
         {
             this.InitializeComponent();
+            Inicio.MinDate =DateTime.Today;
         }
         /// <summary>
         /// Evento que controla que checkbox se ha seleccionado y muestra en pantalla
@@ -48,10 +49,16 @@ namespace DI_07_Controls
             cadena = rb.Name;
 
         }
-        /* Con dos calendarios, simular uan reserva en un hotel
-         * El día inicial no puede ser anterior a hoy
-         * El día final no puede ser anterior al día siguiente al de inicio de reserva
-         */
         
+
+        private void Inicio_SelectedDatesChanged(CalendarView sender, CalendarViewSelectedDatesChangedEventArgs args)
+        {
+            Fin.MinDate=sender.SelectedDates.ElementAt(0).AddDays(1);
+        }
+        /* Con dos calendarios, simular uan reserva en un hotel
+* El día inicial no puede ser anterior a hoy
+* El día final no puede ser anterior al día siguiente al de inicio de reserva
+*/
+
     }
 }

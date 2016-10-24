@@ -18,7 +18,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="2" Grid.Row="0">
             <RadioButton Name="Yes" 
@@ -54,5 +54,13 @@
                  Language="es-Es" 
                  TextWrapping="Wrap" 
                  AcceptsReturn="True"/>
+        <CalendarView Name="Inicio" 
+                      SelectedDatesChanged="Inicio_SelectedDatesChanged"
+                      Grid.Column="0" 
+                      Grid.Row="3"/>
+        <CalendarView Name="Fin"
+                      Grid.Column="1" 
+                      Grid.Row="3"/>
+        <Button Grid.Column="3" Grid.Row="3" Name="Seleccionar" Content="Seleccionar"/>
     </Grid>
 </Page>
