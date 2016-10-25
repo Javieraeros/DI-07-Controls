@@ -53,7 +53,19 @@ namespace DI_07_Controls
 
         private void Inicio_SelectedDatesChanged(CalendarView sender, CalendarViewSelectedDatesChangedEventArgs args)
         {
+            Fin.IsEnabled = true;
             Fin.MinDate=sender.SelectedDates.ElementAt(0).AddDays(1);
+
+            //Peta!
+            Fin.SelectedDates.Add(Fin.MinDate);
+        }
+
+        private async void Seleccionar_Click(object sender, RoutedEventArgs e)
+        {
+            TimeSpan diferencia = Fin.SelectedDates.ElementAt(0)-Inicio.SelectedDates.ElementAt(0);
+            String tiempo=String.Format("Has reservado {0} días",(int) diferencia.TotalDays);
+            MessageDialog md = new MessageDialog(tiempo);
+            await md.ShowAsync();
         }
         /* Con dos calendarios, simular uan reserva en un hotel
 * El día inicial no puede ser anterior a hoy

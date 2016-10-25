@@ -54,13 +54,24 @@
                  Language="es-Es" 
                  TextWrapping="Wrap" 
                  AcceptsReturn="True"/>
-        <CalendarView Name="Inicio" 
+        <CalendarView Name="Inicio"
+                      FirstDayOfWeek="Monday"
                       SelectedDatesChanged="Inicio_SelectedDatesChanged"
                       Grid.Column="0" 
-                      Grid.Row="3"/>
+                      Grid.Row="3"
+                      Padding="5"/>
         <CalendarView Name="Fin"
+                      IsEnabled="False"
+                      FirstDayOfWeek="Monday"
                       Grid.Column="1" 
-                      Grid.Row="3"/>
-        <Button Grid.Column="3" Grid.Row="3" Name="Seleccionar" Content="Seleccionar"/>
+                      Grid.Row="3"
+                      Padding="5"/>
+        <Button Grid.Column="3" Grid.Row="3" Name="Seleccionar" Content="Seleccionar" Click="Seleccionar_Click"/>
+        
+        <!--Slider-->
+        <Slider Name="sldOrigen" Grid.Column="2" Grid.Row="2" Minimum="0" Maximum="100" TickFrequency="5" TickPlacement="BottomRight"/>
+
+        <!---->
+        <ProgressBar Minimum="0" Maximum="100"/>
     </Grid>
 </Page>
