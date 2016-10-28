@@ -47,6 +47,7 @@
             </RadioButton>
             <Button Name="go" Click="go_Click" Content="Go"/>
         </StackPanel>
+        <!--Texto y password-->
         <TextBox ScrollViewer.VerticalScrollBarVisibility="Auto"
                  Grid.Row="1" 
                  Grid.Column="2" 
@@ -54,6 +55,10 @@
                  Language="es-Es" 
                  TextWrapping="Wrap" 
                  AcceptsReturn="True"/>
+
+        <PasswordBox Name="Contraseña" Grid.Row="1" Grid.Column="3" MaxHeight="30"/>
+
+        <!--Calendarios-->
         <CalendarView Name="Inicio"
                       FirstDayOfWeek="Monday"
                       SelectedDatesChanged="Inicio_SelectedDatesChanged"
@@ -66,12 +71,69 @@
                       Grid.Column="1" 
                       Grid.Row="3"
                       Padding="5"/>
-        <Button Grid.Column="3" Grid.Row="3" Name="Seleccionar" Content="Seleccionar" Click="Seleccionar_Click"/>
+        <Button Grid.Column="3" Grid.Row="3" 
+                Name="Seleccionar" Content="Seleccionar" Click="Seleccionar_Click"/>
         
         <!--Slider-->
         <Slider Name="sldOrigen" Grid.Column="2" Grid.Row="2" Minimum="0" Maximum="100" TickFrequency="5" TickPlacement="BottomRight"/>
 
-        <!---->
-        <ProgressBar Minimum="0" Maximum="100"/>
+        <!--Progress Bar-->
+        <ProgressBar Minimum="0" Maximum="100" Grid.Column="3" Grid.Row="2"/>
+        
+        <!-- Pivot-->
+        <Pivot Title="Módulos" Grid.Column="0" Grid.Row="1">
+            <PivotItem Header="DI">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Diseño es caca"/>
+                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE007;"  />
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="SYP">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Servicios y procesos mola"/>
+                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE00B;"  />
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="Moviles">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Móviles mola mucho"/>
+                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE00A;"  />
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="Acceso a Datos">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Acceso está guay"/>
+                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE19F;"  />
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="Sistema de Gestión">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Por ahora se tolera"/>
+                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE962;"  />
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="Empresa">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="La María"/>
+                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xED54;"  />
+                </StackPanel>
+            </PivotItem>
+        </Pivot>
+        
+        <!--List box y combo Box -->
+        <ListBox Name="lista" Grid.Column="0" Grid.Row="2">
+            <ListBoxItem Content="Hola"/>
+            <ListBoxItem Content="Fernando"/>
+            <ListBoxItem Content="Me aburro"/>
+            <ListBoxItem Content="Mucho"/>
+
+        </ListBox>
+
+        <ComboBox Name="Combo" Grid.Column="1" Grid.Row="2">
+            <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
+            <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
+        </ComboBox>
+        
     </Grid>
 </Page>
