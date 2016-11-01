@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="Ejercicio_ProgressBar.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ejercicio_ProgressBar"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <RelativePanel Name="Principal" Grid.Row="0">
+            <TextBox Name="Ruta" Width="Auto" TextWrapping="Wrap" PlaceholderText="Introduce la ruta del fichero" />
+            <Button Name="Picker" Content="..." Click="Picker_Click" RelativePanel.RightOf="Ruta"/>
+            <Button Name="Prueba" Content="Copiar!" RelativePanel.Below="Ruta" Click="Prueba_Click"/>
+        </RelativePanel>
+        <ProgressBar Name="Barrita"
+                     Minimum="0" Maximum="100" 
+                     Grid.Row="1" 
+                     Foreground="Blue" Value="0" Margin="10,0,10,0"/>
+
+    </Grid>
+</Page>
